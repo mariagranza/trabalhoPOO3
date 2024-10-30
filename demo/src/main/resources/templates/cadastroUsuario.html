@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cadastro de Usuário</title>
+</head>
+<body>
+<h1>Cadastro de Usuário</h1>
+<form action="#" th:action="@{/salvarUsuario}" th:object="${usuario}" method="post">
+    <label>Nome: <input type="text" th:field="*{nome}"/></label><br>
+    <label>CPF: <input type="text" th:field="*{cpf}"/></label><br>
+    <label>Senha: <input type="password" th:field="*{senha}"/></label><br>
+    <label>Tipo de Acesso:
+        <select th:field="*{tipoAcesso}">
+            <option value="Gerente">Gerente</option>
+            <option value="Funcionário">Funcionário</option>
+        </select>
+    </label><br>
+    <button type="submit">Confirmar cadastro</button>
+</form>
+</body>
+</html>
